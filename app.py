@@ -124,7 +124,7 @@ app = Flask(__name__)
 model = joblib.load('cancer_model_again.pkl')
 
 # Load and prepare the dataset for accuracy evaluation
-df = pd.read_csv('ssv_ds.csv.csv')
+df = pd.read_csv('ssv_ds.csv')
 df['diagnosis'] = df['diagnosis'] == 3
 df['sex'] = df['sex'].map({'M': 1, 'F': 0})
 df = df[['creatinine', 'plasma_CA19_9', 'age', 'sex', 'LYVE1', 'REG1B', 'TFF1', 'diagnosis']]
