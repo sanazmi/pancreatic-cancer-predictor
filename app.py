@@ -70,6 +70,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import VotingClassifier
 from xgboost import XGBClassifier
+import os
 
 app = Flask(__name__)
 
@@ -137,5 +138,9 @@ def predict():
     except Exception as e:
         return render_template('index.html', result=f"Error: {str(e)}", result_class="danger", accuracy=None)
 
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # default to 5000 if PORT not set
+    app.run(host='0.0.0.0', port=port)
+
