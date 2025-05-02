@@ -121,7 +121,7 @@ from sklearn.model_selection import train_test_split
 app = Flask(__name__)
 
 # Load the trained ensemble model
-model = joblib.load('cancer_model_again.pkl')
+model = joblib.load('ensemble_model.pkl')
 
 # Load and prepare the dataset for accuracy evaluation
 df = pd.read_csv('ssv_ds.csv')
